@@ -30,6 +30,9 @@ sys.tracebacklimit = 0
 # it still exits the interpreter before anything can be read.
 
 
+PATH = ''.join([x + '/' for x in __file__.split('/')[:-1]])
+# Set PATH to the direcrory of this file.
+
 def read_document():
     """Access the document with NMR spectra. This only accepts .docx files"""
 
@@ -40,7 +43,7 @@ def read_document():
 
     filename = input('Enter the input file name: ')
     try:
-        document = Document(filename + '.docx')
+        document = Document(PATH + filename + '.docx')
     except docexc.PackageNotFoundError:
         print('Error: no document with such name has been found!')
         raise
@@ -323,7 +326,7 @@ while True:
     break
 new_document = Document()
 write_spectra(spectra, formatter, new_document)
-new_document.save(new_file + '.docx')
+new_document.save(PATH + new_file + '.docx')
 # Ask where to write the new file. Saving atop the same file as the input
 # file is forbidden. Perform `write_spectra` using the wanted `Formatter`
 # and save the .docx file.
