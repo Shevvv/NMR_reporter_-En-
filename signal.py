@@ -32,7 +32,7 @@ class Signal:
         integral = f', integral: {self.integral()}' if self.integral else ''
         multiplicity = f', multiplicity: {self.multiplicity()}' \
                        if self.multiplicity else ''
-        j_values = f', J constant(s): {self.j_values()}' if self.j_values \
+        j_values = f', J constant(s): {self.j_values()} Hz' if self.j_values \
             else ''
         assignment = f', assignment: {self.assignment()}' if self.assignment \
                      else ''

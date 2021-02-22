@@ -30,8 +30,7 @@ sys.tracebacklimit = 0
 # it still exits the interpreter before anything can be read.
 
 
-PATH = ''.join([x + '/' for x in __file__.split('/')[:-1]])
-# Set PATH to the direcrory of this file.
+PATH = os.path.dirname(os.path.realpath(__file__)) + '/'
 
 def read_document():
     """Access the document with NMR spectra. This only accepts .docx files"""

@@ -466,7 +466,7 @@ class Spectrum:
         nuclide = f'nuclide {self.nuclide()}, ' if self.nuclide else ''
         solvent = f'solvent {self.solvent()}, ' if self.solvent \
             else ''
-        frequency = f'machine frequency {self.frequency()}, ' \
+        frequency = f'machine frequency {self.frequency()} MHz, ' \
                     if self.frequency \
             else ''
         signals = f'{len(self.signals)} signals.'
